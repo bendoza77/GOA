@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Goa-Oriented Academy — Learn Real Tech Skills</title>
+    <meta name="description" content="Goa-Oriented Academy — a premium, project-based technology academy teaching front-end, back-end, mobile, cybersecurity, game dev, design, robotics, SQL and algorithms." />
+  </head>
+  <body>
+    <div id="root"></div>
+    <script>
+      // Apply saved/preferred theme before paint to avoid a flash.
+      (function () {
+        try {
+          var saved = localStorage.getItem("goa-theme");
+          var prefersLight = window.matchMedia(
+            "(prefers-color-scheme: light)",
+          ).matches;
+          var light = saved ? saved === "light" : prefersLight;
+          if (light) document.documentElement.classList.add("light");
+        } catch (e) {}
+      })();
+    </script>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
+</html>
